@@ -1,0 +1,1105 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+/* Header */
+
+header {
+  background-image: url('lap/hatter.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 50px 20px;
+  color: black;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Nav */
+
+nav {
+  background-color: #ffffff;
+  border-radius: 0 0 10px 10px;
+  padding: 10px 0;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul#navlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul#navlist li {
+  margin: 5px 0;
+}
+
+#navlist a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #006400;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  border: 2px solid #ffffff;
+  text-align: center;
+}
+
+ul#navlist li#current a {
+  color: #ffffff;
+  background-color: #ff0000;
+}
+
+#navlist a:hover {
+  color: #ffffff;
+  background-color: #006400;
+}
+
+/* Footer */
+
+footer {
+  background-color: gray;
+  margin-top:20px;
+  padding: 5px;
+  border-radius: 10px 10px 0 0;
+  border: black solid 1px;
+}
+
+footer p {
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Index oldal*/
+
+/* Rövid ismertető */
+
+.article-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #e6e6e6;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+}
+
+.article-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #4CAF50;
+  border-bottom: 2px solid #4CAF50;
+  border-top: 2px solid #4CAF50;
+  padding-bottom: 5px;
+}
+
+.article-container h3 {
+  font-size: 1.4rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #ff0000;
+  border-bottom: 2px solid #ff0000;
+  border-top: 2px solid #ff0000;
+  border-radius:0;
+}
+
+.article-container p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  text-align: justify;
+  background-color:#ccc;
+  padding:10px;
+  border-radius:10px;
+
+}
+
+.article-container ul {
+  padding-left: 20px;
+  margin: 10px 0;
+  background-color:#ccc;
+  padding:10px;
+  border-radius:10px;
+}
+
+.article-container ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  list-style-type: none;
+}
+
+
+/* Képgalléria */
+
+.slider {
+  width: 90%;
+  min-width: 400px;
+  margin: 100px auto;
+}
+
+.slick-slide {
+  margin: 0px 3px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: orange;
+}
+
+.slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: 1;
+}
+
+.slick-active {
+  opacity: 1;
+}
+
+.slick-current {
+  opacity: 1;
+}
+
+
+/* Webshop */
+.webshop-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: fit-content;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 280px;
+  height: 340px;
+  height: fit-content;
+  border: 2px solid black;
+  border-radius: 10px;
+  flex-basis:38%;
+}
+
+.image-price-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  height: fit-content;
+
+
+}
+
+.image-price-container p {
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 100%;
+  text-align: center;
+
+}
+
+.image-price-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  height: fit-content;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.shop-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+}
+
+.delete-cart-image {
+  background-image: url("webshop/delete_cart.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: white;
+}
+
+.button-look-plus {
+  background-image: url("webshop/plus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: white;
+}
+
+.button-look-minus {
+  background-image: url("webshop/minus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: white;
+}
+
+
+.price-look {
+  font-size: 20px;
+}
+
+.delete-cart-image:hover {
+  transform: scale(1.1);
+}
+
+.button-look-plus:hover {
+  transform: scale(1.1);
+}
+
+.button-look-minus:hover {
+  transform: scale(1.1);
+}
+
+.webshop-h1 {
+  text-align: center;
+}
+
+.cart-h2 {
+  text-align: center;
+  margin: 15px;
+  color:black;
+  background-color: rgb(199, 199, 199);
+  margin-left:30%;
+  margin-right:30%;
+  border-radius:8px;
+}
+
+.cart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: fit-content;
+  border-radius:8px;
+  padding:3px;
+
+}
+
+.text-container h4 {
+  margin: 0;
+  padding: 1px;
+  text-align: center;
+  border-bottom: 2px black solid;
+  font-size:18px;
+  color:rgb(255, 65, 65);
+
+}
+
+li.list-items {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin-top:5px;
+  margin-bottom:5px;
+
+}
+
+li.list-items img {
+  border: 1px solid black;
+  margin-right: 5px;
+  border-radius: 8px;
+}
+
+ul#cart-items.list-items {
+  padding: 0;
+
+}
+
+.webshop-h1{
+  color:white;
+  background-color:red;
+  margin-left:30%;
+  margin-right:30%;
+  border-radius:10px;
+}
+
+.cart-container h3{
+  margin-top:0;
+  margin-bottom:3px;
+  color:white;
+  background-color:gray;
+  border-radius:8px;
+  padding:3px;
+}
+
+
+/* Szállítási adatok */
+
+.jcc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(179, 179, 179);
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.6) 2px 2px;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.form-container h2{
+  margin:10px;
+  padding:4px;
+  background-color:rgb(235, 235, 235);
+  border-radius:10px;
+
+}
+
+.form-container label, .form-container span{
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+input[type="text"], input[type="email"], input[type="radio"]{
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type="radio"]{
+  width: auto;
+  margin-right: 8px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="radio"]:focus{
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+.form-group div{
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+input[type="checkbox"]{
+  width: auto;
+  margin-right: 10px;
+}
+
+button{
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 48%;
+  margin: 5px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+button:hover{
+  background-color: #45a049;
+}
+
+.button-group{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+
+/* Játékoskeret oldal */
+
+/* Szekciók */
+.position-group {
+  margin-bottom: 40px;
+}
+
+.position-group h2 {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-radius:10px;
+  background-color:#006400;
+  margin-right:25%;
+  margin-left:25%;
+}
+
+/* Flexbox játékos container */
+.player-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Játékos kártya */
+.player-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-basis: 45%;
+  position: relative;
+  transition: transform 0.3s ease;
+  border: 2px solid red;
+}
+
+
+.player-card img {
+  width: 100%;
+  height: auto;
+}
+
+.player-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.player-info h3 {
+  font-size: 1.2rem;
+  color: #ff0000;
+}
+
+.player-info p {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Játékoskeret anchor menü */
+
+#anchor-menu {
+  background-color: rgba(29, 27, 27, 0.9);
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 0 10px 10px 0;
+  position: fixed;
+  bottom: 110px;
+  left: 0;
+  z-index: 1000;
+  width: 130px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+#anchor-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#anchor-menu ul li {
+  margin: 5px 0;
+}
+
+#anchor-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#anchor-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+
+/* Szövetségi kapitány oldal */
+
+.jcc-2{
+  display:flex;
+justify-content:center;
+margin:0;
+padding:0;
+}
+
+.captain-container{
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  margin:0;
+}
+
+
+.captain-container img{
+  border-radius:10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  height: auto;
+  margin:20px;
+}
+
+.captain-container h1{
+  margin:20px 0 0 0;
+  padding:0;
+  color:#0077ff;
+
+}
+
+
+.captain-container aside{
+  border:1px;
+  height:auto;
+  padding:20px;
+  width:80%;
+  background-color:#8fb0d6;
+  border-radius:10px;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
+  margin:20px;
+}
+
+.captain-container h2{
+  color:black;
+  text-align:left;
+  margin:0;
+  padding:0;
+  color: white;
+  text-shadow: 2px 2px gray;
+}
+
+.captain-container aside h3{
+  color:black;
+  text-align:left;
+  margin:20px 0 0 0;
+  padding:0;
+  color: white;
+  text-shadow: 2px 2px gray;
+
+}
+
+.captain-container article{
+  width:80%;
+  border:1px;
+  height:auto;
+  padding:20px;
+  background-color:#8fb0d6;
+  border-radius:10px;
+  box-shadow: 3px 3px gray;
+  
+}
+
+.quote {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  max-width: 600px;
+  text-align: center;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #0077ff;
+  border-right: 5px solid #0077ff;
+  border-radius: 10px;
+  margin:0 10px 0 10px;
+}
+
+
+.quote:hover {
+  transform: scale(1.05);
+}
+
+.captain-container aside:hover {
+  transform: scale(1.05);
+  border:#0077ff solid 2px;
+}
+
+
+
+
+
+
+
+/* Stadion oldal */
+
+/* Címkép */
+.cimkep{
+  width: 100%;
+  height: auto;
+}
+
+
+/* Médiatartalom konténer */
+
+.media-container{
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+  align-items:center;
+  margin: 20px;
+  gap: 30px;
+}
+
+iframe {
+  width: 100%;
+  height: auto;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  border:0 solid white;
+}
+
+/* Táblázat */
+
+.sectors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  gap: 30px;
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+.stadium-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 90%;
+}
+
+.categories {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.categories td {
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+}
+
+.categories th {
+  background-color: #f1f1f1;
+  color: #333;
+  font-weight: bold;
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.categories tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.categories td.piros {
+  background-color: rgb(214, 45, 45);
+  width: 30px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.categories td.narancs {
+  background-color: rgb(248, 160, 45);
+  width: 30px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.categories td.zold {
+  background-color: rgb(32, 179, 140);
+  width: 30px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.categories td.kek {
+  background-color: rgb(51, 175, 214);
+  width: 30px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+/* Lista felsorolás 2 hasábban */
+.two-columns {
+  column-count: 2;
+  column-gap: 20px;
+  list-style-type:disc;
+  padding: 0;
+  margin-left:10%;
+  margin-right:10%;
+}
+
+.two-columns li {
+  break-inside: avoid;
+  padding: 5px 0;
+}
+
+/* Szöveg */
+.text {
+  margin-left:5%;
+  margin-right:5%;
+}
+
+.text h2, h3{
+  text-align:center;
+  color:white;
+}
+
+.text h2, h3{
+  border-radius:10px;
+  padding:7px;
+}
+
+.text h2{
+  background: linear-gradient(150deg, white, red, white);
+  font-size:30px;
+}
+.text h3{
+  background: linear-gradient(150deg, white, green, white);
+  font-size:20px;
+}
+
+.pborder{
+background-color:rgba(155, 228, 158, 0.3);
+border-radius:10px;
+padding:10px;
+}
+
+.fwb{
+  font-weight: bold;
+  font-size:18px;
+}
+
+/* 2. Anchor menu */
+#anchor-menu-2 {
+  background-color: rgba(29, 27, 27, 0.9);
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 0 10px 10px 0;
+  position: fixed;
+  bottom: 110px;
+  left: 0;
+  z-index: 1000;
+  width: 150px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#anchor-menu-2 ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#anchor-menu-2 ul li {
+  margin: 5px 0;
+}
+
+#anchor-menu-2 ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#anchor-menu-2 ul li a:hover {
+  text-decoration: underline;
+}
+
+
+@media only screen and (min-width: 600px) {
+  /* Tablet nézet */
+
+  /* Header módosítás*/
+  header {
+    background-image: url('lap/hatter2.png');
+  }
+
+  /* Nav módosítás */
+  ul#navlist {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  ul#navlist li {
+    margin: 0 10px;
+  }
+
+  nav{
+    position: sticky;
+  }
+
+/* Index oldal szállítás */
+.form-container{
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+button{
+  width: 48%;
+  margin: 5px;
+}
+
+/* ismertető */
+
+.article-container {
+  padding: 30px;
+  max-width: 70%;
+}
+
+  /* Játékoskeret oldal módosítás */
+  .player-card {
+    flex-basis: 30%;
+  }
+
+  /* Játékoskeret anchor menü módosítás*/
+  section {
+    scroll-margin-top: 80px;
+  }
+
+  #anchor-menu {
+    bottom: 100px;
+    left: 0;
+  }
+
+  /* iFrame módosítás */
+  iframe {
+    width: 80%;
+    max-width: 720px;
+}
+
+/* Szektorok */
+.sectors{
+  flex-direction: row;
+}
+
+/* Szöveg módosítás*/
+.text{
+  margin-left:10%;
+  margin-right:10%;
+}
+
+/* 2. Anchor menü módosítás*/
+.text h2{
+  scroll-margin-top: 80px;
+}
+
+/* Marco */
+.captain-container{
+  flex-direction:column;
+}
+
+.captain-container aside{
+  width:80%;}
+
+  .captain-container h1{
+    margin:20px 20px 0 0;
+  }
+
+  .captain-container img{
+    width:80%;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  /* Számítógép nézet */
+
+  /* Header módosítás*/
+  header {
+    background-image: url('lap/hatter2.png');
+  }
+
+  /* Menü módosítás */
+  ul#navlist {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  ul#navlist li {
+    margin: 0 10px;
+  }
+
+nav{
+  position: sticky;
+}
+  /* Index oldal szállítás */
+.item-container{
+  flex-basis:18%;
+}
+  .form-container{
+    width: 60%;
+    padding: 30px;
+  }
+
+  .button-group{
+    justify-content: space-between;
+  }
+
+  button{
+    width: 48%;
+    margin: 5px;
+  }
+
+/* ismertető */
+
+.article-container {
+  padding: 30px;
+  max-width: 70%;
+}
+
+  /* Játékoskeret oldal módosítás */
+  .player-card{
+    border: 1px solid #ddd;
+    flex-basis: 22%;
+  }
+  
+  .player-card:hover {
+    transform: scale(1.05);
+    border: 2px solid red;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Játékoskeret anchor menü módosítás*/
+  section {
+    scroll-margin-top: 80px;
+  }
+
+  #anchor-menu {
+    bottom: 100px;
+    left: 0;
+  }
+
+ /* iFrame módosítás */
+  iframe {
+    width: 70%;
+    max-width: 960px;
+}
+
+/* Szektorok */
+.sectors{
+  flex-direction: row;
+}
+
+/* Szöveg módosítás*/
+.text{
+  margin-left:15%;
+  margin-right:15%;
+}
+
+/* 2. Anchor menü módosítás*/
+.text h2{
+  scroll-margin-top: 80px;
+}
+
+/* Marco */
+.captain-container{
+  flex-direction:row;
+}
+
+.captain-container aside{
+  width:40%;}
+
+  .captain-container h1{
+    margin:20px 20px 0 0;
+  }
+
+  .captain-container img{
+    width:70%;
+  }
+
+
+}
+

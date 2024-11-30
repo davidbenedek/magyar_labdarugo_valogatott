@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webshop</title>
+    <style>
+        .webshop-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+            gap: 10px;
+            height: fit-content;
+        }
+
+        .item-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            width: 280px;
+            height: 340px;
+            height: fit-content;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        .image-price-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            height: fit-content;
+
+
+        }
+
+        .image-price-container p {
+            margin: 0;
+            padding: 0;
+            height: fit-content;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            width: 100%;
+            text-align: center;
+
+        }
+
+        .image-price-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            height: fit-content;
+        }
+
+        .price {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .shop-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            height: fit-content;
+        }
+
+        .delete-cart-image {
+            background-image: url("delete_cart.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 35px;
+            height: 35px;
+            border: none;
+            background-color: white;
+        }
+
+        .button-look-plus {
+            background-image: url("plus.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 35px;
+            height: 35px;
+            border: none;
+            background-color: white;
+        }
+
+        .button-look-minus {
+            background-image: url("minus.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 35px;
+            height: 35px;
+            border: none;
+            background-color: white;
+        }
+
+
+        .price-look {
+            font-size: 20px;
+        }
+
+        .delete-cart-image:hover {
+            transform: scale(1.1);
+        }
+
+        .button-look-plus:hover {
+            transform: scale(1.1);
+        }
+
+        .button-look-minus:hover {
+            transform: scale(1.1);
+        }
+
+        .webshop-h1 {
+            text-align: center;
+        }
+
+        .cart-h2 {
+            text-align: center;
+            margin: 15px;
+            color:black;
+            background-color: rgb(199, 199, 199);
+            margin-left:30%;
+            margin-right:30%;
+            border-radius:8px;
+        }
+
+        .cart-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: fit-content;
+            border-radius:8px;
+            padding:3px;
+
+        }
+
+        .text-container h4 {
+            margin: 0;
+            padding: 1px;
+            text-align: center;
+            border-bottom: 2px black solid;
+            font-size:18px;
+            color:rgb(255, 65, 65);
+
+        }
+
+        li.list-items {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            margin-top:5px;
+            margin-bottom:5px;
+
+        }
+
+        li.list-items img {
+            border: 1px solid black;
+            margin-right: 5px;
+            border-radius: 8px;
+        }
+
+        ul#cart-items.list-items {
+            padding: 0;
+    
+        }
+
+        .webshop-h1{
+            color:white;
+            background-color:red;
+            margin-left:30%;
+            margin-right:30%;
+            border-radius:10px;
+        }
+
+        .cart-container h3{
+            margin-top:0;
+            margin-bottom:3px;
+            color:white;
+            background-color:gray;
+            border-radius:8px;
+            padding:3px;
+        }
+    </style>
+    <script>
+        function hozzaad(value) {
+            let pieces = document.getElementById(`value-${value}`)
+            let int_pieces = parseInt(pieces.innerHTML)
+            int_pieces++
+            pieces.innerHTML = int_pieces
+            kosar()
+
+        }
+
+        function kivon(value) {
+            let pieces = document.getElementById(`value-${value}`)
+            let int_pieces = parseInt(pieces.innerHTML)
+            if (int_pieces != 0) {
+                int_pieces--
+                pieces.innerHTML = int_pieces
+            }
+            kosar()
+        }
+
+        function kosar() {
+
+            let cartItems = document.getElementById("cart-items");
+
+            while (cartItems.firstChild) {
+                cartItems.removeChild(cartItems.firstChild);
+            }
+
+            let pieces_value_1 = document.getElementById(`value-1`)
+            let int_pieces_value_1 = parseInt(pieces_value_1.innerHTML)
+            let pieces_value_2 = document.getElementById(`value-2`)
+            let int_pieces_value_2 = parseInt(pieces_value_2.innerHTML)
+            let pieces_value_3 = document.getElementById(`value-3`)
+            let int_pieces_value_3 = parseInt(pieces_value_3.innerHTML)
+            let pieces_value_4 = document.getElementById(`value-4`)
+            let int_pieces_value_4 = parseInt(pieces_value_4.innerHTML)
+
+            let total = document.getElementById(`cart-total`)
+            let int_total = parseInt(total.innerHTML)
+
+            total.innerHTML = int_pieces_value_1 * 20000 + int_pieces_value_2 * 6000 + int_pieces_value_3 * 2000 + int_pieces_value_4 * 8000
+
+            if (int_pieces_value_1 != 0) {
+                let kosar_elemek = document.getElementById("cart-items")
+                let mez = document.createElement("li")
+
+                mez.classList.add("list-items")
+
+                let mezImage = document.createElement("img")
+                mezImage.src = "mez.jpg"
+                mezImage.alt = "mez"
+                mezImage.style.width = "50px"
+                mezImage.style.height = "auto"
+                mez.appendChild(mezImage)
+
+                mez.innerHTML += (`Válogatott mez: ${int_pieces_value_1} db x 20000 Ft = ${int_pieces_value_1 * 20000} Ft`)
+                kosar_elemek.appendChild(mez)
+            }
+
+            if (int_pieces_value_2 != 0) {
+                let kosar_elemek = document.getElementById("cart-items")
+                let sal = document.createElement("li")
+
+                sal.classList.add("list-items")
+
+                let salImage = document.createElement("img")
+                salImage.src = "sal.jpg"
+                salImage.alt = "sal"
+                salImage.style.width = "50px"
+                salImage.style.height = "auto"
+                sal.appendChild(salImage)
+
+                sal.innerHTML += (`Szurkolói sál: ${int_pieces_value_2} db x 6000 Ft = ${int_pieces_value_2 * 6000} Ft`)
+                kosar_elemek.appendChild(sal)
+            }
+
+            if (int_pieces_value_3 != 0) {
+                let kosar_elemek = document.getElementById("cart-items")
+                let kulcstarto = document.createElement("li")
+
+                kulcstarto.classList.add("list-items")
+
+                let kulcstartoImage = document.createElement("img")
+                kulcstartoImage.src = "kulcstarto.jpg"
+                kulcstartoImage.alt = "kulcstarto"
+                kulcstartoImage.style.width = "50px"
+                kulcstartoImage.style.height = "auto"
+                kulcstarto.appendChild(kulcstartoImage)
+
+                kulcstarto.innerHTML += (`Kulcstartó: ${int_pieces_value_3} db x 2000 Ft = ${int_pieces_value_3 * 2000} Ft`)
+                kosar_elemek.appendChild(kulcstarto)
+            }
+
+            if (int_pieces_value_4 != 0) {
+                let kosar_elemek = document.getElementById("cart-items")
+                let sapka = document.createElement("li")
+
+                sapka.classList.add("list-items")
+
+                let sapkaImage = document.createElement("img")
+                sapkaImage.src = "sapka.jpg"
+                sapkaImage.alt = "Sapka"
+                sapkaImage.style.width = "50px"
+                sapkaImage.style.height = "auto"
+                sapka.appendChild(sapkaImage)
+
+                sapka.innerHTML += (`Sapka: ${int_pieces_value_4} db x 8000 Ft = ${int_pieces_value_4 * 8000} Ft`)
+                kosar_elemek.appendChild(sapka)
+            }
+
+        }
+
+        function kosar_torles() {
+            let pieces_value_1 = document.getElementById(`value-1`)
+            let pieces_value_2 = document.getElementById(`value-2`)
+            let pieces_value_3 = document.getElementById(`value-3`)
+            let pieces_value_4 = document.getElementById(`value-4`)
+            let total = document.getElementById(`cart-total`)
+            total.innerHTML = 0
+            pieces_value_1.innerHTML = 0
+            pieces_value_2.innerHTML = 0
+            pieces_value_3.innerHTML = 0
+            pieces_value_4.innerHTML = 0
+
+            let cartItems = document.getElementById("cart-items");
+
+            while (cartItems.firstChild) {
+                cartItems.removeChild(cartItems.firstChild);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1 class="webshop-h1">Webshop</h1>
+    <div class="webshop-container">
+        <!--Mez-->
+        <div class="item-container">
+            <div class="text-container">
+                <h4>Válogatott mez</h4>
+            </div>
+            <div class="image-price-container">
+                <img src="mez.jpg" alt="mez">
+                <div class="price">
+                    <p><span class="price-look">20000 Ft</span>
+                </div>
+
+            </div>
+            <div class="shop-container">
+                <table>
+                    <tr>
+                        <td><input type="button" class="button-look-minus" name="subtraction" id="subtraction" value=""
+                                onClick="kivon(1)"></td>
+                        <td><span class="price-look" id="value-1">0</span></td>
+                        <td><input type="button" name="addition" class="button-look-plus" id="addition" value=""
+                                onClick="hozzaad(1)"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!--Sál-->
+        <div class="item-container">
+            <div class="text-container">
+                <h4>Szurkolói sál</h4>
+            </div>
+            <div class="image-price-container">
+                <img src="sal.jpg" alt="sál">
+                <div class="price">
+                    <p><span class="price-look">6000 Ft</span></span>
+                </div>
+
+            </div>
+            <div class="shop-container">
+                <table>
+                    <tr>
+                        <td><input type="button" class="button-look-minus" name="subtraction" id="subtraction" value=""
+                                onClick="kivon(2)"></td>
+                        <td><span class="price-look" id="value-2">0</span></td>
+                        <td><input type="button" name="addition" class="button-look-plus" id="addition" value=""
+                                onClick="hozzaad(2)"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!--Kulcstartó-->
+
+        <div class="item-container">
+            <div class="text-container">
+                <h4>Kulcstartó</h4>
+            </div>
+            <div class="image-price-container">
+                <img src="kulcstarto.jpg" alt="sál">
+                <div class="price">
+                    <p><span class="price-look">2000 Ft</span></span>
+                </div>
+
+            </div>
+            <div class="shop-container">
+                <table>
+                    <tr>
+                        <td><input type="button" class="button-look-minus" name="subtraction" id="subtraction" value=""
+                                onClick="kivon(3)"></td>
+                        <td><span class="price-look" id="value-3">0</span></td>
+                        <td><input type="button" name="addition" class="button-look-plus" id="addition" value=""
+                                onClick="hozzaad(3)"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!--Sapka-->
+        <div class="item-container">
+            <div class="text-container">
+                <h4>Sapka</h4>
+            </div>
+            <div class="image-price-container">
+                <img src="sapka.jpg" alt="mez">
+                <div class="price">
+                    <p><span class="price-look">8000 Ft</span>
+                </div>
+
+            </div>
+            <div class="shop-container">
+                <table>
+                    <tr>
+                        <td><input type="button" class="button-look-minus" name="subtraction" id="subtraction" value=""
+                                onClick="kivon(4)"></td>
+                        <td><span class="price-look" id="value-4">0</span></td>
+                        <td><input type="button" name="addition" class="button-look-plus" id="addition" value=""
+                                onClick="hozzaad(4)"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kosár -->
+    <h2 class="cart-h2">Kosár</h2>
+    <div class="cart-container">
+        <ul class="list-items" id="cart-items">
+        </ul>
+        <p class="price-look">Összesen:&nbsp<span id="cart-total">0</span>&nbspFt</p>
+        <h3>Kosár törlése</h3>
+        <input type="button" class="delete-cart-image" name="delete_cart" id="delete_cart" value=""
+            onClick="kosar_torles()">
+    </div>
+</body>
+
+</html>

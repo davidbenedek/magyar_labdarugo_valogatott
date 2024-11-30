@@ -1,0 +1,27 @@
+1. Oldal készítőjének neve: Dávid Benedek
+2. URL cím: 
+3. Rövid leírás: Ennek weboldalnak a témája a magyar labdarúgó-válogatott. Általános információkat találunk benne 
+a Puskás Arénáról, a játékosokról és a szövetségi kapitányról.
+4. JS kód helye: Index (Főoldal) lap, (script.js fájlban)
+Rövid ismertetése: A javascript kód egy nem túl bonyolult működésű webshop. Egyes termékeket tudunk a kosárba tenni
+a mennyiség kiválasztásával. Ezek után láthatjuk a fizetendő összeget. 
+5. Egyedi fonttípus: Lato, https://fonts.google.com/specimen/Lato
+Az egész weblap szövege ezzel a fonttípussal van.
+6. Átvett kódok:
+<iFrame> paraméterek
+allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin"
+referrerpolicy="no-referrer-when-downgrade"
+
+Források:
+Index oldal forrása:
+Ai generated
+
+Szövetségi kapitány oldal forrása
+https://hu.wikipedia.org/wiki/Marco_Rossi_(labdar%C3%BAg%C3%B3,_1964)
+
+Játékoskeret oldal forrása:
+https://valogatott.mlsz.hu/ferfi-a-valogatott/keret
+
+Stadion oldal forrása:
+https://hu.wikipedia.org/wiki/Pusk%C3%A1s_Ar%C3%A9na
