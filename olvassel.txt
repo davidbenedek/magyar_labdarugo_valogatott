@@ -1,5 +1,5 @@
 1. Oldal készítőjének neve: Dávid Benedek
-2. URL cím: 
+2. URL cím: https://davidbenedek.github.io/magyar_labdarugo_valogatott/
 3. Rövid leírás: Ennek weboldalnak a témája a magyar labdarúgó-válogatott. Általános információkat találunk benne 
 a Puskás Arénáról, a játékosokról és a szövetségi kapitányról.
 4. JS kód helye: Index (Főoldal) lap, (script.js fájlban)
