@@ -194,61 +194,63 @@
 <div class="jcc">
         <div class="form-container">
             <h2>Szállítási és fizetési adatok</h2>
-            <form action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="POST">
+            <form action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="POST" id="myform" novalidate>
                 
                 <!-- Név -->
                 <div class="form-group">
                     <label for="name">Teljes név</label><br>
-                    <input type="text" id="name" name="name" placeholder="Add meg a teljes neved!" required>
+                    <input type="text" id="name" name="name" placeholder="Add meg a teljes neved!">
                 </div>
         
                 <!-- Cím -->
                 <div class="form-group">
                     <label for="address">Szállítási cím</label><br>
-                    <input type="text" id="address" name="address" placeholder="Add meg a szállítási címed!" required>
+                    <input type="text" id="address" name="address" placeholder="Add meg a szállítási címed!">
                 </div>
         
                 <!-- Város -->
                 <div class="form-group">
                     <label for="city">Város</label><br>
-                    <input type="text" id="city" name="city" placeholder="Add meg a várost!" required>
+                    <input type="text" id="city" name="city" placeholder="Add meg a várost!">
                 </div>
         
                 <!-- Irányítószám -->
                 <div class="form-group">
                     <label for="postal-code">Irányítószám</label><br>
-                    <input type="text" id="postal-code" name="postal-code" placeholder="Add meg az irányítószámot!" required>
+                    <input type="text" id="postal-code" name="postalcode" placeholder="Add meg az irányítószámot!">
                 </div>
         
                 <!-- Telefonszám -->
                 <div class="form-group">
-                    <label for="phone">Telefonszám</label><br>
-                    <input type="text" id="phone" name="phone" placeholder="Add meg a telefonszámod!" required>
+                    <label for="phone">Telefonszám (formátum: pl.: 06301234567)</label><br>
+                    <input type="text" id="phone" name="phone" placeholder="Add meg a telefonszámod!" value="06">
                 </div>
         
                 <!-- E-mail -->
                 <div class="form-group">
                     <label for="email">E-mail cím</label><br>
-                    <input type="email" id="email" name="email" placeholder="Add meg az e-mail címed!" required>
+                    <input type="email" id="email" name="email" placeholder="Add meg az e-mail címed!">
                 </div>
         
                 <!-- Szállítási mód -->
                 <div class="form-group">
                     <span>Szállítási mód</span>
                     <div>
-                        <input type="radio" id="standard" name="shipping-method" value="standard" required>
+                        <input type="radio" id="standard" name="shippingmethod" value="standard">
                         <label for="standard">Normál szállítás</label>
                     </div>
                     <div>
-                        <input type="radio" id="express" name="shipping-method" value="express">
+                        <input type="radio" id="express" name="shippingmethod" value="express">
                         <label for="express">Expressz szállítás</label>
                     </div>
+                    <div id="shipping-error"></div>
                 </div>
+                
         
                 <!-- Fizetési mód -->
                 <div class="form-group">
                     <label for="payment-method">Fizetési mód</label><br>
-                    <select id="payment-method" name="payment-method" required>
+                    <select id="payment-method" name="paymentmethod">
                         <option value="">Válassz egyet!</option>
                         <option value="credit-card">Bankkártyás fizetés</option>
                         <option value="cash-on-delivery">Utánvét</option>
@@ -279,6 +281,7 @@
     </footer>
     <script src="jquery-3.7.1.js" type="text/javascript"></script>
     <script src="slick-1.8.1/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script src="jquery-validation-1.19.5/dist/jquery.validate.js"></script>
     <script src="script.js" type="text/javascript">
     </script>
 </body>
