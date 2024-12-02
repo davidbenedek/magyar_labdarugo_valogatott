@@ -389,8 +389,6 @@ ul#cart-items.list-items {
 
 .form-container{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   background-color: rgb(179, 179, 179);
   width: 90%;
@@ -400,10 +398,10 @@ ul#cart-items.list-items {
   font-size: 16px;
   padding: 10px;
   margin: 10px;
-  box-sizing: border-box;
 }
 
 .form-container h2{
+  text-align:center;
   margin:10px;
   padding:4px;
   background-color:rgb(235, 235, 235);
