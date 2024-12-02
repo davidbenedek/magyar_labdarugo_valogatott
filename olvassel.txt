@@ -13,6 +13,17 @@ allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-pi
 referrerpolicy="strict-origin-when-cross-origin"
 referrerpolicy="no-referrer-when-downgrade"
 
+errorPlacement - form validálás
+errorPlacement: function (error, element) {
+            if (element.attr("name") == "shippingmethod") {
+                error.appendTo("#shipping-error");
+            } else if (element.attr("name") == "paymentmethod") {
+                error.insertAfter("#payment-method");
+            } else {
+                error.insertAfter(element);
+            }
+        }
+
 Források:
 Index oldal forrása:
 Ai generated
