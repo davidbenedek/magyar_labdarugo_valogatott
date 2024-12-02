@@ -1,6 +1,6 @@
 // picture-gallery
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     $(".center").slick({
         //szamitogep
@@ -13,8 +13,8 @@ $(document).ready(function() {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
-        pauseOnHover:false,
-        pauseOnFocus:false,
+        pauseOnHover: false,
+        pauseOnFocus: false,
         responsive: [
             {
                 //tablet
@@ -42,29 +42,29 @@ $(document).ready(function() {
 
 // webshop
 
-document.getElementById('subtraction-1').addEventListener('click', function() {
+document.getElementById('subtraction-1').addEventListener('click', function () {
     kivon(1)
 })
-document.getElementById('subtraction-2').addEventListener('click', function() {
+document.getElementById('subtraction-2').addEventListener('click', function () {
     kivon(2)
 })
-document.getElementById('subtraction-3').addEventListener('click', function() {
+document.getElementById('subtraction-3').addEventListener('click', function () {
     kivon(3)
 })
-document.getElementById('subtraction-4').addEventListener('click', function() {
+document.getElementById('subtraction-4').addEventListener('click', function () {
     kivon(4)
 })
 
-document.getElementById('addition-1').addEventListener('click', function() {
+document.getElementById('addition-1').addEventListener('click', function () {
     hozzaad(1)
 })
-document.getElementById('addition-2').addEventListener('click', function() {
+document.getElementById('addition-2').addEventListener('click', function () {
     hozzaad(2)
 })
-document.getElementById('addition-3').addEventListener('click', function() {
+document.getElementById('addition-3').addEventListener('click', function () {
     hozzaad(3)
 })
-document.getElementById('addition-4').addEventListener('click', function() {
+document.getElementById('addition-4').addEventListener('click', function () {
     hozzaad(4)
 })
 
@@ -200,3 +200,74 @@ function kosar_torles() {
     }
 
 }
+
+// JQUERY form validálás
+
+$(document).ready(function () {
+    //ide jön a rules és a messages rész
+    $("#myform").validate({
+        rules: {
+            name: "required",
+            address: "required",
+            city: "required",
+            postalcode: {
+                required: true,
+                digits: true,
+                maxlength: 4,
+                minlength:4,
+            },
+            phone: {
+                required: true,
+                minlength:9,
+                maxlength: 11,
+                digits: true,
+            },
+            email: {
+                required: true,
+                email: true,
+            },
+            shippingmethod: {
+                required: true,
+            },
+            paymentmethod: {
+                required: true,
+            },
+        },
+        messages: {
+            name: " Kérlek, írd be a teljes neved!",
+            address: "Kérlek, add meg a szállítási címed!",
+            city: "Kérlek, add meg a várost!",
+            postalcode: {
+                required: "Kérlek, add meg az irányítószámot!",
+                digits: "Kérlek, csak számot írj be!",
+                 minlength: "Az irányítószámnak pontosan 4 számjegyűnek kell lennie!",
+                maxlength: "Az irányítószámnak pontosan 4 számjegyűnek kell lennie!"
+            },
+            phone: {
+                required: "Kérlek, add meg a telefonszámod!",
+                minlength: "A telefonszám túl rövid!",
+                maxlength: "A telefonszám túl hosszú!",
+                digits: "Kérlek, csak számot írj be!",
+            },
+            email: "Kérlek, valós email címet adj meg!",
+            shippingmethod: {
+                required: "Kérlek, adj meg egy szállítási lehetőséget!",
+            },
+            paymentmethod: {
+                required: "Kérlek, adj meg egy fizetési lehetőséget!",
+            },
+        },
+
+        errorPlacement: function (error, element) {
+            if (element.attr("name") == "shippingmethod") {
+                error.appendTo("#shipping-error");
+            } else if (element.attr("name") == "paymentmethod") {
+                error.insertAfter("#payment-method");
+            } else {
+                error.insertAfter(element);
+            }
+        }
+        
+    
+    });
+});
