@@ -100,7 +100,7 @@ footer p {
   justify-content: center;
   padding: 20px;
   background-color: #e6e6e6;
-  margin: 10px auto;
+  margin: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   max-width: 600px;
@@ -218,7 +218,7 @@ footer p {
   justify-content: center;
   margin: 0;
   padding: 0;
-  width: 100%;
+  flex-basis: 100%;
   height: 100%;
   height: fit-content;
 
@@ -255,7 +255,7 @@ footer p {
   justify-content: center;
   margin: 0;
   padding: 0;
-  height: fit-content;
+  flex-basis:100%;
 }
 
 .delete-cart-image {
@@ -391,7 +391,7 @@ ul#cart-items.list-items {
   display: flex;
   flex-direction: column;
   background-color: rgb(179, 179, 179);
-  width: 90%;
+  justify-content: 90%;
   height: auto;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.6) 2px 2px;
@@ -428,7 +428,6 @@ input[type="text"], input[type="email"], input[type="radio"]{
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
 }
 
 input[type="radio"]{
@@ -474,7 +473,7 @@ button:hover{
 .button-group{
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  flex-basis: 100%;
 }
 
 select {
@@ -490,6 +489,22 @@ select {
 }
 
 select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+textarea{
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+textarea:focus{
   outline: none;
   border-color: #4CAF50;
   box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
@@ -602,7 +617,7 @@ label.error {
 
 .jcc-2{
   display:flex;
-justify-content:center;
+  justify-content:center;
 margin:0;
 padding:0;
 }
@@ -613,7 +628,7 @@ padding:0;
   flex-wrap:wrap;
   justify-content:center;
   align-items:center;
-  width:100%;
+  flex-basis:100%;
   margin:0;
 }
 
@@ -622,7 +637,6 @@ padding:0;
   border-radius:10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   width: 90%;
-  height: auto;
   margin:20px;
 }
 
@@ -635,10 +649,12 @@ padding:0;
 
 
 .captain-container aside{
+  display:flex;
+  flex-direction:column;
+  flex-wrap: wrap;
   border:1px;
-  height:auto;
   padding:20px;
-  width:80%;
+  flex-basis:80% 1 1;
   background-color:#8fb0d6;
   border-radius:10px;
   box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
@@ -665,13 +681,16 @@ padding:0;
 }
 
 .captain-container article{
-  width:80%;
+  display:flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+  flex-basis:80%;
   border:1px;
-  height:auto;
   padding:20px;
   background-color:#8fb0d6;
   border-radius:10px;
   box-shadow: 3px 3px gray;
+  margin:20px;
   
 }
 
@@ -922,7 +941,8 @@ padding:10px;
 
 /* Index oldal szállítás */
 .form-container{
-  width: 80%;
+  display:flex;
+  flex-basis: 80%;
   max-width: 600px;
   padding: 20px;
 }
@@ -937,6 +957,7 @@ button{
 .article-container {
   padding: 30px;
   max-width: 70%;
+  margin:10px auto;
 }
 
   /* Játékoskeret oldal módosítás */
@@ -982,7 +1003,7 @@ button{
 }
 
 .captain-container aside{
-  width:80%;}
+  flex-basis:80%;}
 
   .captain-container h1{
     margin:20px 20px 0 0;
@@ -1020,7 +1041,7 @@ nav{
   flex-basis:18%;
 }
   .form-container{
-    width: 80%;
+    flex-basis: 80%;
     padding: 30px;
   }
 
@@ -1038,7 +1059,9 @@ nav{
 .article-container {
   padding: 30px;
   max-width: 70%;
+  margin:10px auto;
 }
+
 
   /* Játékoskeret oldal módosítás */
   .player-card{
@@ -1093,7 +1116,7 @@ nav{
 }
 
 .captain-container aside{
-  width:40%;}
+  flex-basis:40%;}
 
   .captain-container h1{
     margin:20px 20px 0 0;
@@ -1101,6 +1124,11 @@ nav{
 
   .captain-container img{
     width:70%;
+  }
+
+  .captain-container article{
+    flex-basis:82%;
+
   }
 
 
