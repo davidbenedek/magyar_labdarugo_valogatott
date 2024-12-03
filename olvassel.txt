@@ -8,12 +8,13 @@ a mennyiség kiválasztásával. Ezek után láthatjuk a fizetendő összeget.
 5. Egyedi fonttípus: Lato, https://fonts.google.com/specimen/Lato
 Az egész weblap szövege ezzel a fonttípussal van.
 6. Átvett kódok:
+(Térkép beágyazás)
 <iFrame> paraméterek
 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 referrerpolicy="strict-origin-when-cross-origin"
 referrerpolicy="no-referrer-when-downgrade"
 
-errorPlacement - form validálás
+errorPlacement - form validálás (chatgpt)
 errorPlacement: function (error, element) {
             if (element.attr("name") == "shippingmethod") {
                 error.appendTo("#shipping-error");
